@@ -45,11 +45,7 @@ public class Tugas extends javax.swing.JFrame {
 
         jLabel2.setText("Tujuan");
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
-        jButton1.setText("jButton1");
+        jButton1.setText("Pindah");
 
         jLabel3.setText("Angka Awal");
 

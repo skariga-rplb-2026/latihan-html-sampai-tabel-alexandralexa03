@@ -1,5 +1,5 @@
-import javax.swing.JOptionPane;
-import java.text.DecimalFormat;
+ import javax.swing.JOptionPane;
+import java.text.*;
         /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -74,7 +74,7 @@ public class fHitung extends javax.swing.JFrame {
         });
 
         txtTotal.setBackground(new java.awt.Color(255, 204, 204));
-        txtTotal.setForeground(new java.awt.Color(255, 204, 204));
+        txtTotal.setForeground(new java.awt.Color(0, 0, 0));
         txtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTotalActionPerformed(evt);
@@ -85,7 +85,7 @@ public class fHitung extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("TOTAL:");
 
-        btnHitung.setForeground(new java.awt.Color(255, 204, 204));
+        btnHitung.setForeground(new java.awt.Color(0, 0, 0));
         btnHitung.setText("Hitung");
         btnHitung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +93,7 @@ public class fHitung extends javax.swing.JFrame {
             }
         });
 
-        btnKeluar.setForeground(new java.awt.Color(255, 204, 204));
+        btnKeluar.setForeground(new java.awt.Color(0, 0, 0));
         btnKeluar.setText("Keluar");
         btnKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,9 +174,9 @@ public class fHitung extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(btnHitung)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -212,22 +212,22 @@ public class fHitung extends javax.swing.JFrame {
        double total = harga * qty;
        double nomdiskon = total * (Diskon / 100.0);
        double totalbayar = total - nomdiskon;
-       txtTotal.setText(Double.toString(totalbayar));
        DecimalFormat angka = new DecimalFormat("###,###");
        lblTotal.setText("Total : Rp "+angka.format(totalbayar));
+       txtTotal.setText("Rp " + angka.format(totalbayar));
     }//GEN-LAST:event_btnHitungActionPerformed
 
     private void txtQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQtyActionPerformed
 
-    private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTotalActionPerformed
-
     private void txtDiskonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiskonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDiskonActionPerformed
+
+    private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTotalActionPerformed
 
     /**
      * @param args the command line arguments

@@ -43,9 +43,9 @@ public class P_Modul2 extends javax.swing.JFrame {
         txtEsJeruk = new javax.swing.JTextField();
         btnHitung = new javax.swing.JButton();
         txtEsTeh = new javax.swing.JTextField();
-        lblCaraBayar = new javax.swing.JLabel();
+        lblCara = new javax.swing.JLabel();
         btnKosong = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        lblCaraBayar = new javax.swing.JLabel();
         chkSoto = new javax.swing.JCheckBox();
         chkSate = new javax.swing.JCheckBox();
         chkEsTeh = new javax.swing.JCheckBox();
@@ -83,8 +83,8 @@ public class P_Modul2 extends javax.swing.JFrame {
         txtEsTeh.setBackground(new java.awt.Color(255, 204, 204));
         txtEsTeh.setText("0");
 
-        lblCaraBayar.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        lblCaraBayar.setText("CARA BAYAR");
+        lblCara.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lblCara.setText("CARA BAYAR");
 
         btnKosong.setBackground(new java.awt.Color(255, 204, 204));
         btnKosong.setForeground(new java.awt.Color(0, 0, 0));
@@ -95,10 +95,10 @@ public class P_Modul2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Cara Bayar:");
+        lblCaraBayar.setText("Cara Bayar:");
 
         chkSoto.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        chkSoto.setText("Soto : Rp.15000");
+        chkSoto.setText("Soto : Rp.5000");
         chkSoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkSotoActionPerformed(evt);
@@ -106,7 +106,7 @@ public class P_Modul2 extends javax.swing.JFrame {
         });
 
         chkSate.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        chkSate.setText("Sate : Rp.17000");
+        chkSate.setText("Sate : Rp 10000");
         chkSate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkSateActionPerformed(evt);
@@ -114,7 +114,7 @@ public class P_Modul2 extends javax.swing.JFrame {
         });
 
         chkEsTeh.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        chkEsTeh.setText("Es Teh : Rp.3000");
+        chkEsTeh.setText("Es Teh : Rp.2000");
         chkEsTeh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkEsTehActionPerformed(evt);
@@ -122,7 +122,7 @@ public class P_Modul2 extends javax.swing.JFrame {
         });
 
         chkEsJeruk.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        chkEsJeruk.setText("Es Jeruk : Rp.4000");
+        chkEsJeruk.setText("Es Jeruk  :  Rp.1500");
         chkEsJeruk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkEsJerukActionPerformed(evt);
@@ -142,10 +142,20 @@ public class P_Modul2 extends javax.swing.JFrame {
         buttonGroup1.add(rdoBCA);
         rdoBCA.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
         rdoBCA.setText("BCA Card");
+        rdoBCA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoBCAActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rdoMandiri);
         rdoMandiri.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
         rdoMandiri.setText("Mandiri Card");
+        rdoMandiri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoMandiriActionPerformed(evt);
+            }
+        });
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblTotal.setText("Rp. 0");
@@ -156,13 +166,13 @@ public class P_Modul2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addGap(103, 103, 103))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(chkSate, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,35 +186,40 @@ public class P_Modul2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtSoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEsJeruk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEsTeh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtEsTeh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtEsJeruk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(92, 92, 92))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCara)
                             .addComponent(lblCaraBayar)
-                            .addComponent(jLabel4)
                             .addComponent(rdoCash)
                             .addComponent(rdoMandiri)
                             .addComponent(rdoBCA))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnHitung)
-                                .addGap(92, 92, 92))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnKosong, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblTotal)
+                                .addGap(51, 51, 51))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnHitung, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(chkEsJeruk)
+                            .addComponent(txtEsJeruk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -217,32 +232,26 @@ public class P_Modul2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtSate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(chkSate))
-                        .addGap(12, 12, 12)
-                        .addComponent(txtEsJeruk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(chkEsTeh))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEsTeh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chkEsJeruk))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtEsTeh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chkEsTeh))
+                        .addGap(57, 57, 57)))
                 .addComponent(btnHitung)
-                .addGap(23, 23, 23)
-                .addComponent(lblCaraBayar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(lblCara)
+                .addGap(30, 30, 30)
+                .addComponent(rdoCash, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdoCash, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdoBCA))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblTotal)
+                    .addComponent(rdoBCA))
                 .addGap(8, 8, 8)
                 .addComponent(rdoMandiri)
                 .addGap(18, 18, 18)
                 .addComponent(btnKosong)
                 .addGap(42, 42, 42)
-                .addComponent(jLabel4)
+                .addComponent(lblCaraBayar)
                 .addContainerGap())
         );
 
@@ -265,14 +274,14 @@ public class P_Modul2 extends javax.swing.JFrame {
         if(chkSoto.isSelected()){
             txtSoto.setEditable(true);
             txtSoto.setText("1");
-        }else{
+        } else {
             txtSoto.setEditable(false);
             txtSoto.setText("0");
         }
     }//GEN-LAST:event_chkSotoActionPerformed
 
     private void rdoCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoCashActionPerformed
-        // TODO add your handling code here:
+      lblCaraBayar.setText("Cara Bayar : UANG CASH");
     }//GEN-LAST:event_rdoCashActionPerformed
 
     private void chkSateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkSateActionPerformed
@@ -318,8 +327,8 @@ if(chkEsTeh.isSelected()){
              int nEsJeruk = Integer.parseInt(txtEsJeruk.getText());
              int nEsTeh = Integer.parseInt(txtEsTeh.getText());
              
-             int nTotal = (5000 * nSoto)+
-                     (10000 + nSate)+(2000 *nEsJeruk)+(1500 * nEsTeh);
+             int nTotal = (5000* nSoto)+
+                     (10000 * nSate)+(1500 *nEsJeruk)+(2000 *nEsTeh);
              lblTotal.setText("Rp."+nTotal);
              
              
@@ -347,8 +356,16 @@ if(chkEsTeh.isSelected()){
         txtEsTeh.setEditable(false);
         rdoCash.setSelected(true);
         lblTotal.setText("Rp. 0");
-        lblCaraBayar.setText("Cara Bayar");
+        lblCaraBayar.setText("Cara Bayar  : UANG CASH");
     }//GEN-LAST:event_btnKosongActionPerformed
+
+    private void rdoMandiriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoMandiriActionPerformed
+     lblCaraBayar.setText("Cara Bayar : KARTU DEBIT MANDIRI");
+    }//GEN-LAST:event_rdoMandiriActionPerformed
+
+    private void rdoBCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoBCAActionPerformed
+      lblCaraBayar.setText("Cara Bayar : KARTU DEBIT BCA");
+    }//GEN-LAST:event_rdoBCAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,7 +407,7 @@ if(chkEsTeh.isSelected()){
     private javax.swing.JCheckBox chkSoto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel lblCara;
     private javax.swing.JLabel lblCaraBayar;
     private javax.swing.JLabel lblTotal;
     private javax.swing.JRadioButton rdoBCA;
